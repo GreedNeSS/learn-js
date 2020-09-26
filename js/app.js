@@ -1032,14 +1032,443 @@
 // method = obj.go;
 // method()
 
-function makeUser() {
-	return {
-		name: 'ruslan',
-		ref() { return this },
-	};
-};
+// function makeUser() {
+// 	return {
+// 		name: 'ruslan',
+// 		ref() { return this },
+// 	};
+// };
 
-let user = makeUser();
+// let user = makeUser();
 
-alert(user.ref().name);
-console.log(user.ref().name)
+// alert(user.ref().name);
+// console.log(user.ref().name);
+
+// Задание
+
+// let calculator = {
+// 	read() {
+// 		return this.a = +prompt('Введите число a: ', 0),
+// 			this.b = +prompt('Введите число b: ', 0);
+// 	},
+// 	sum() {
+// 		let sumNum = this.a + this.b;
+// 		return alert(sumNum);
+// 	},
+// 	mul() {
+// 		let mulNum = this.a * this.b;
+// 		return alert(mulNum);
+// 	},
+
+// };
+
+// calculator.read();
+// calculator.sum();
+// calculator.mul();
+
+// let ladder = {
+// 	step: 0,
+// 	up() {
+// 		this.step++;
+// 		return this;
+// 	},
+// 	down() {
+// 		this.step--;
+// 		return this;
+// 	},
+// 	showStep: function () {
+// 		alert(this.step);
+// 		return this;
+// 	},
+// }
+
+// ladder.up().up().up().down().showStep();
+
+// Преобразование обьектов в примитивы
+
+// let user = {
+// 	name: 'john',
+// 	money: 1000,
+// [Symbol.toPrimitive](hint) {
+// 	alert(`hint: ${hint}`);
+// 	return hint == 'string' ? `{name: '${this.name}'}` :
+// 		this.money;
+// 	}
+// };
+
+// alert(user);
+// alert(+user);
+// alert(user + 500);
+
+// let user = {
+// 	name: 'Ruslan',
+// 	money: 1000,
+// 	toString() {
+// 		return `name: '${this.name}`;
+// 	},
+// 	valueOf() {
+// 		return this.money;
+// 	},
+// };
+
+// alert(user);
+// alert(+user);
+// alert(user + 500);
+
+// let user1 = {
+// 	name: 'Ruslan',
+// 	money: 1000,
+// 	[Symbol.toPrimitive](hint) {
+// 		alert(`hint: ${hint}`);
+// 		return hint == 'string' ? `{name: '${this.name}'}` :
+// 			this.money;
+// 	}
+// };
+
+// let user2 = {
+// 	name: 'John',
+// 	money: 200,
+// 	[Symbol.toPrimitive](hint) {
+// 		alert(`hint: ${hint}`);
+// 		return hint == 'string' ? `{name: '${this.name}'}` :
+// 			this.money;
+// 	}
+// };
+
+// alert(user1);
+// alert(user2);
+// alert(user2 - user1);
+
+// Конструкторы, создание обьектов через new
+
+// function User(name, age) {
+// 	this.name = name;
+// 	this.age = age;
+// 	this.isAdmin = false;
+// }
+
+// let user = new User(prompt('Введите ваше имя: ', 'Name'), prompt('Введите ваш возраст: ', 100));
+
+// console.log(user);
+
+// Использование new.target
+
+// function User() {
+// 	alert(new.target);
+// }
+
+// User();
+
+// new User();
+
+// function User(name) {
+// 	if (!new.target) {
+// 		return new User(name);
+// 	}
+// 	this.name = name;
+// }
+
+// let ruslan = User('Ruslan');
+// alert(ruslan.name);
+
+// function BigUser() {
+// 	this.name = 'Ruslan';
+// }
+
+// let user = new BigUser();
+// alert(new BigUser().name);
+// alert(user.name)
+
+// function SmallUser() {
+// 	this.name = 'Ruslan';
+// 	return 'godzilla';
+// }
+
+// let user = new SmallUser();
+// let user1 = SmallUser();
+// alert(user.name);
+// alert(user1)
+
+// function User(name) {
+// 	this.name = name;
+// 	this.sayHi = function () {
+// 		alert('Меня завут: ' + this.name);
+// 	}
+// }
+
+// let vasya = new User('Вася');
+
+// vasya.sayHi();
+// console.log(vasya);
+
+// Задание 1
+
+// let user = {
+// 	name: 'ruslan',
+// }
+
+// function A() {
+// 	return user;
+// }
+// function B() {
+// 	return user;
+// }
+
+// let a = new A;
+// let b = new B;
+
+// alert(a == b);
+// console.log(a);
+// console.log(b);
+
+//Задание номер два
+
+// let calculator = new Calculator();
+
+// calculator.read();
+
+// alert('Sum=' + calculator.sum());
+// alert('Mul=' + calculator.mul());
+
+// function Calculator() {
+// 	this.read = function () {
+// 		this.a = +prompt('Введите число a = ', '');
+// 		this.b = +prompt('Введите число b = ', '');
+// 	};
+// 	this.sum = function () {
+// 		return this.a + this.b;
+// 	};
+// 	this.mul = function () {
+// 		return this.a * this.b;
+// 	}
+// }
+
+// console.log(calculator);
+
+// Задание номер три
+
+// let accumulator = new Accumulator(1);
+
+// accumulator.read();
+// accumulator.read();
+
+// alert(accumulator.value);
+
+// function Accumulator(startingValue) {
+// 	this.value = startingValue
+// 	this.read = function () {
+// 		this.value += +prompt('Сколько нужно добавить ? ', '');
+// 	};
+// }
+
+// Методы примитивов
+
+// let str = 'Привет';
+
+// alert(str.toUpperCase()); // Метод примитива
+
+// console.log(str);
+
+
+// let num = 1.24646;
+
+// alert(num.toFixed(2));
+
+// alert(typeof 0);
+
+// alert(typeof new Number(0));
+
+// let zero = new Number(0);
+
+// if (zero) {
+// 	console.log('zero имеет истиное значение')
+// }
+// let zero2 = Number(0);
+
+// if (!zero2) {
+// 	console.log('zero2 имеет false значение')
+// }
+// console.log(typeof zero);
+// console.log(typeof zero2);
+
+// Задание 1
+
+// let str = 'Привет';
+
+// str.test = 5;
+
+// console.log(str);
+
+
+// Способ записи чисел
+
+// let billion = 1e9;
+
+// console.log(billion);
+
+
+// let num = 1.23e-4;
+// console.log(num);
+
+// let a = 0xff;  // шестнадцатиричная
+// let b = 0b11111111; // двоичная
+// let c = 0o377;  //восьмиричная
+
+// alert(a == b);
+// alert(b == c)
+
+
+// let num = 255;
+
+// alert(num.toString(2));
+// alert(num.toString(16));
+
+// Округление
+
+// let a = 3.5;
+// console.log(Math.floor(a)); // В меньшую сторону
+// console.log(Math.ceil(a));  // В большую сторону
+// console.log(Math.round(a)); // До ближайшего целого
+// console.log(Math.trunc(a)); // Производит удаление дробной части
+
+
+// let num = 1.235455;
+
+// alert(Math.round(num * 100) / 100);
+
+// console.log(num.toFixed(2)); // Выводит значение в строке
+// console.log(+num.toFixed(2));
+// console.log(Number(num.toFixed(2)));
+
+// alert(0.1.toFixed(20));
+
+// alert((0.1 + 0.2).toFixed(2));
+
+// console.log(0 == -0);
+
+// alert(isNaN(NaN));
+// alert(isNaN('str'));
+// alert(NaN == NaN);
+
+// alert(isFinite('15'));
+// alert(isFinite('str'));
+// alert(isFinite(Infinity));
+
+// alert(isFinite(+prompt('Введите число: ', '')));  // Используется для проверки является ли переменная числом
+
+// console.log(Object.is(NaN, NaN));
+// console.log(NaN == NaN);
+
+// alert(parseInt('100px'));
+// alert(parseFloat('12.5em'));
+
+// Математические примеры
+
+// alert(Math.random()); // Псевдо-рандомное число
+
+// alert(Math.max(3, 5, 7, 23, 5754, 3, 5, 7,)); // Выбор максимального числа
+// alert(Math.min(3, 5, 7, 23, 5754, 3, 5, 7,)); // Выбор минимального числа
+
+// alert(Math.pow(5, 3));  // Возведение в степень
+
+// alert(Math.sqrt(2125));
+
+// Задание номер один
+
+// function sum() {
+// 	let a = +prompt('Введите число: ', '');
+// 	let b = +prompt('Введите число: ', '');
+// 	return alert(a + b);
+// }
+// sum();
+
+// Задание 2
+
+// alert(((6.35 * 10).toFixed(0)) / 10);
+
+// alert(Math.round(6.35 * 10) / 10);
+
+// Задание 3
+
+// function readNumber() {
+// 	let a = prompt('Введите число: ', '0')
+// 	if (!a) {
+// 		alert(`Число: null`);
+// 	} else if (isFinite(a)) {
+// 		alert(`Число ${+a}`);
+// 	} else {
+// 		readNumber();
+// 	}
+// }
+
+// readNumber();
+
+//  Решение на сайте
+
+// function readNumber() {
+// 	let num;
+
+// 	do {
+// 		num = prompt('Введите число: ', '0');
+// 	} while (!isFinite(num));
+
+// 	if (num === null || num === '') return null;
+
+// 	return +num;
+// }
+
+// alert(`Число: ${readNumber()}`); 
+
+// let i = 0;
+// while (i != 10) {
+// 	i += 0.2;
+// 	console.log(i);
+
+// }
+
+// Задание 4
+
+// function random(a, b) {
+// 	return (Math.random() * (b - a)) + a;
+
+// }
+
+// alert(random(1, 5));
+// alert(random(1, 5));
+// alert(random(1, 5));
+
+// Задание 5
+
+
+// function random(min, max) {
+// 	return Math.floor(Math.random() * (max - min + 1)) + min;
+
+// }
+
+// alert(random(1, 5));
+// alert(random(1, 5));
+// alert(random(1, 5));
+// alert(random(1, 5));
+// alert(random(1, 5));
+// alert(random(1, 5));
+// alert(random(1, 5));
+// alert(random(1, 5));
+// alert(random(1, 5));
+// alert(random(1, 5));
+// alert(random(1, 5));
+// alert(random(1, 5));
+// alert(random(1, 5));
+// alert(random(1, 5));
+// alert(random(1, 5));
+
+
+// Строки
+
+// let guestList = `Guests:
+// * John
+// * Pete
+// * Mary
+// `;
+// alert(guestList);
+// console.log(typeof (guestList));
+
