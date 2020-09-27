@@ -1472,3 +1472,209 @@
 // alert(guestList);
 // console.log(typeof (guestList));
 
+// Примеры с Юникодом
+
+// alert('\u00a9');
+// alert('\u{20331}');
+// alert('\u{1f60d}');
+
+// let userName = 'Ruslan';
+
+// alert(userName.length);
+
+// let str = 'hello';
+
+// alert(str[0]);
+// alert(str.charAt(1));
+// alert(str[2]);
+// alert(str.charAt(3));
+// alert(str[str.length - 1]);//последний символ O
+
+// for (let char of str) {
+// 	alert(char);
+// }
+
+// let str = 'Hi';
+
+// str[0] = 'h';       // не работает
+// str = 'h' + str[1]; // работает
+
+// alert(str);
+// alert(str.toUpperCase());
+
+// let str = 'Hello my friends';
+
+// console.log(str.indexOf('fri'));// Метод поиска в строке
+// console.log(str.indexOf('e'));
+// console.log(str.indexOf('e', 2));
+
+
+// let str = 'Ослик Иа-Иа посмотрел на виадук';
+
+// let target = 'Иа';
+// let pos = 0;
+
+// while (true) {
+// 	let foundPos = str.indexOf(target, pos);
+// 	if (foundPos == -1) {
+// 		break;
+// 	}
+// 	alert(`Найден тут: ${foundPos}`);
+// 	pos = foundPos + 1;
+// }
+
+// let str = 'Ослик Иа-Иа посмотрел на виадук';
+
+// let target = 'Иа';
+
+// let pos = -1;
+// while ((pos = str.indexOf(target, pos + 1)) != -1) {
+// 	alert(pos);
+// }
+
+// let str = 'Widget with id';
+// let foundPos;
+
+// if ((foundPos = (str.indexOf('Wid'))) != -1) { //Если не писать != -1 то оператор if = 0  и итерации не происходит
+// 	alert(`Есть совпадение на позиции ${foundPos}`);
+// }
+
+// let str = 'Widget with id';
+// let target = 'Wid';
+// let foundPos;
+
+// if (~(foundPos = str.indexOf(target))) {          // Побитовый оператор ~ NOT ровняется ~n = -( n + 1 ) и при foundPos = -1, оператор  if получит 0 и перестанет работать
+// 	alert(`Есть совпадение на позиции ${foundPos}`);
+// }
+
+// let str = 'Widget with id';
+
+// if (str.includes('id', 0)) {
+// 	alert('Есть совпадение!');
+// }
+
+// if (str.startsWith('Wid')) {
+// 	alert('Строка начинается с нужного нам текста!');
+// }
+
+// if (str.endsWith('id')) {
+// 	alert('Строка заканчивается нужным нам текстом!');
+// }
+
+
+// let userName = 'Ruslanius';
+
+// if (confirm('Хотите узнать имя?')) {
+// 	alert(userName.slice(0, 6));
+// }
+
+// if (confirm('Хотите узнать ещё кусок?')) {
+// 	alert(userName.slice(-3));
+// }
+
+// if (confirm('Хотите узнать имя?')) {
+// 	console.log(userName.substring(6, 0));
+// }
+
+// if (confirm('Хотите узнать имя?')) {
+// 	console.log(userName.substring(0, 6));
+// }
+
+// console.log(userName.substr(3, 3)) // Указывает место с которого начать и сколько знаков вернуть
+
+// Сравнение строк
+
+// console.log('z'.codePointAt()); // В () можно указать позицию символа
+// console.log('Z'.codePointAt());
+// console.log('z' > 'Z');
+
+// Создание символа по его коду
+
+// console.log(String.fromCodePoint(90));
+// console.log('\u005a'); // шестнадцатиричный код символа
+
+// let str = '';
+
+// for (let i = 65; i <= 220; i++) {
+// 	str += String.fromCodePoint(i);
+// }
+
+// console.log(str);
+
+
+// Диакритичекие знаки и нормальзация
+
+// alert('S\u0307'); //добавляем к основному символу s точку с верху
+// alert('S\u0307\u0323'); //а теперь и точку снизу
+
+
+// let str1 = 'S\u0307\u0323';
+// let str2 = 'S\u0323\u0307';
+
+// alert(str1 + str2);
+// alert(str1 == str2);
+
+// alert('S\u0323\u0307'.normalize() == '\u1e68');
+
+// alert(str1.normalize() == str2.normalize());
+
+// let name = '   Ruslan   ';
+
+// console.log(name.trim());
+// console.log(name.repeat(5));
+
+
+// Задание 1
+
+// function usFirst(str) {
+// 	let indent = ' ';
+// 	let firstSimbol = 0;
+// 	for (let char of str) {
+// 		if (char != ' ') {
+// 			break;
+// 		}
+// 		firstSimbol++;
+// 		indent += indent;
+// 	}
+// 	return indent + str[firstSimbol].toUpperCase() + str.slice(firstSimbol + 1);
+// }
+
+// console.log(usFirst('   ruslan'));
+
+
+// Задание 2
+
+// function checkSpam(str) {
+// 	str = str.toLowerCase();
+// 	if ((str.includes('viagra')) || str.includes('xxx')) {
+// 		return true;
+// 	}
+// 	return false;
+// }
+
+// console.log(checkSpam('porno'));
+// console.log(checkSpam('Viagra'));
+// console.log(checkSpam('Xxx'));
+
+
+// Задание 3
+
+// function truncate(str, maxlength) {
+// 	if (str.length > maxlength) {
+// 		return str.slice(0, maxlength - 1) + '\u2026';
+// 	}
+// 	return str;
+// }
+
+// alert(truncate('Вот, что мне хотелось бы сказать на эту тему:', 20))
+// alert(truncate('Всем привет!', 20))
+
+// Задание 4
+
+// function extractCurrencyValue(str) {
+// 	if (str[0] == '$') {
+// 		return +(str.slice(1));
+// 	}
+// }
+
+// console.log(extractCurrencyValue('$1250'));
