@@ -1678,3 +1678,1596 @@
 // }
 
 // console.log(extractCurrencyValue('$1250'));
+
+// Массивы
+
+// let fruits = ['Яблоко', 'Апельсин', 'Слива'];
+
+// console.log(fruits[0]);
+// console.log(fruits[1]);
+// console.log(fruits[2]);
+
+// fruits[2] = 'Груша';
+
+// console.log(fruits[2]);
+
+// fruits[3] = 'Лимон';
+
+// console.log(fruits);
+
+// fruits.push('Черника');
+
+// console.log(fruits);
+
+// fruits.pop();
+
+// console.log(fruits);
+
+// fruits.unshift('Гречка', 'Рис');
+
+// console.log(fruits);
+
+// fruits.shift();
+// fruits.shift();
+
+// console.log(fruits);
+
+// let arr = fruits;
+
+// arr.push('Грейпфрут');
+// console.log(fruits);
+
+// console.log(fruits.length);
+
+// for (let i = 0; i < arr.length; i++) {
+// 	console.log(arr[i]);
+
+// }
+
+// for (let fruit of fruits) {
+// 	console.log(fruit);
+// }
+
+// let arr = [1, 2, 3, 4, 5];
+// console.log(arr[3]);
+
+// arr.length = 2;
+// console.log(arr);
+
+
+//  Матрица
+
+// let matrix = [
+// 	[1, 2, 3],
+// 	[4, 5, 6],
+// 	[7, 8, 9],
+// ];
+
+// console.log(matrix[0][0]);
+// console.log(matrix[1][1]);
+// console.log(matrix[2][0]);
+// console.log(matrix[2][2]);
+
+// Задание 2
+
+// let styles = ['Джаз', 'Блюз'];
+// console.log(styles);
+
+
+// styles.push('Рок-н-ролл');
+// console.log(styles);
+
+// function middleValue(name) {
+// 	let mean = Math.floor((styles.length - 1) / 2);
+// 	styles[mean] = name;
+// 	console.log(styles);
+
+// }
+// middleValue('Классика');
+
+// console.log(styles.shift());
+// console.log(styles);
+
+// styles.unshift('Рэп', 'Регги');
+// console.log(styles);
+
+// Задание 3
+
+// let arr = ['a', 'b'];
+
+// arr.push(function () {
+// 	alert(this);
+// });
+
+// arr[2]();
+
+// Задание 4
+
+// function sumInput() {
+// 	let sumNumValue = 0;
+// 	let arrNumValue = [];
+// 	let numValue = 0;
+// 	do {
+// 		arrNumValue.push(numValue);
+// 		numValue = prompt('Введите число: ', '0');
+// 		if (!numValue || !isFinite(numValue)) {
+// 			break
+// 		}
+// 	} while (true);
+// 	for (let num of arrNumValue) {
+// 		sumNumValue += +num;
+// 	}
+// 	return alert(sumNumValue);
+// }
+
+// sumInput();
+
+// Решение задачи на сайте
+
+// function sumInput() {
+
+// 	let numbers = [];
+
+// 	while (true) {
+
+// 		let value = prompt("Введите число", 0);
+
+// 		if (value === "" || value === null || !isFinite(value)) break;
+
+// 		numbers.push(+value);
+// 	}
+
+// 	let sum = 0;
+// 	for (let number of numbers) {
+// 		sum += number;
+// 	}
+// 	return sum;
+// }
+
+// alert(sumInput());
+
+//  Задание 5
+
+// function getMaxSubSum(arr) {
+// 	let subArr = [];
+// 	let maxSubSumNum = 0;
+// 	let sum = 0;
+// 	for (let num of arr) {
+// 		if (num > 0) {
+// 			sum += num;
+// 			subArr.push(sum);
+// 		} else {
+// 			sum = 0;
+// 		}
+// 	}
+// 	console.log(subArr)
+// 	for (let subSumNum of subArr) {
+// 		if (maxSubSumNum < subSumNum) {
+// 			maxSubSumNum = subSumNum;
+// 		}
+// 	}
+// 	return console.log(maxSubSumNum);
+// }
+
+// getMaxSubSum([-1, 2, 3, -9]);
+// getMaxSubSum([2, -1, 2, 3, -9]);
+// getMaxSubSum([-1, 2, 3, -9, 11]);
+// getMaxSubSum([-2, -1, 1, 2]);
+// getMaxSubSum([100, -9, 2, -3, 5]);
+// getMaxSubSum([1, 2, 3]);
+
+// Ещё раз
+
+// function getMaxSubSum(arr) {
+// 	let maxSum = 0;
+// 	let partialSum = 0;
+
+// 	for (let num of arr) {
+// 		partialSum += num;
+// 		maxSum = Math.max(maxSum, partialSum);
+// 		if (partialSum < 0) {
+// 			partialSum = 0;
+// 		}
+// 	}
+// 	return console.log(maxSum);
+// }
+
+// getMaxSubSum([-1, 2, 3, -9]);
+// getMaxSubSum([2, -1, 2, 3, -9]);
+// getMaxSubSum([-1, 2, 3, -9, 11]);
+// getMaxSubSum([-2, -1, 1, 2]);
+// getMaxSubSum([100, -9, 2, -3, 5]);
+// getMaxSubSum([1, 2, 3]);
+// getMaxSubSum([-1, -2, -3]);
+
+// Методы массивов
+
+// let arrey = ['I', 'go', 'home'];
+
+// delete arrey[1];
+
+// console.log(arrey);
+
+
+// Использавание  splice
+
+// let arrey = ['Я', 'изучаю', 'Javascript', 'прямо', 'сейчас'];
+
+// arrey.splice(1, 1)
+// console.log(arrey);
+
+// arrey.splice(1, 0, 'изучаю')
+// console.log(arrey);
+
+// arrey.splice(0, 3, 'Хочу', 'танцевать');
+// console.log(arrey);
+
+// Исползование slice
+
+// let arr = ['t', 'e', 's', 't'];
+
+// let arrey = arr.slice(); // Создает копию
+// console.log(arrey);
+// console.log(arr);
+
+// console.log(arr == arrey);
+
+// concat
+
+// let arrey = [1, 2];
+// let arrey2 = [5, 6, 7];
+
+// let arr = arrey.concat(3, 4, arrey2,);
+
+// console.log(arr);
+
+// let arrey = [1, 2];
+
+// let arrayLike = {
+// 	0: 'что-то',
+// 	length: 1
+// };
+
+// let arr = arrey.concat(arrayLike);
+// console.log(arr);
+// console.log(arrayLike.length);
+
+
+
+// let arrey = [1, 2];
+
+// let arrayLike = {
+// 	0: 'что-то',
+// 	1: 'ещё',
+// 	[Symbol.isConcatSpreadable]: true,
+// 	length: 2,
+// };
+
+// let arr = arrey.concat(arrayLike);
+// console.log(arr);
+// console.log(arrayLike.length);
+
+// Запуск функции для каждого элемента массива forEach
+
+// let arr = ['Bilbo', 'Gandalf', 'Nazgul'];
+
+// arr.forEach((item, index, array) => {
+// 	alert(`${item} имеет позицию ${index} в массиве ${array}`);
+// });
+
+// Поиск
+
+// let arr = [1, 0, false];
+// arr.push(NaN);
+
+// console.log(arr.indexOf(0));
+// console.log(arr.indexOf(false, 0));
+// console.log(arr.indexOf(null));
+// console.log(arr.includes(1));
+
+// console.log(arr.indexOf(NaN));
+// console.log(arr.includes(NaN));
+
+// let users = [
+// 	{ id: 1, name: 'Вася' },
+// 	{ id: 2, name: 'Петя' },
+// 	{ id: 3, name: 'Руслан'},
+// 	{ id: 4, name: 'Кирил' },
+// ];
+
+
+// let user;
+// users.forEach((item, index, array) => {
+// 	if (item.name == 'Руслан') {
+// 		user = item;
+// 	}
+// });
+// users.forEach((item, index, array) => {
+// 	if (item.id == 3) {
+// 		user = item;
+// 	}
+// });
+
+// console.log(user);
+
+// let admin = users.find(item => item.name == 'Руслан');
+// let admin = users.find(function (item) { return item.name === 'Руслан' });
+// let adminIndex = users.findIndex(item => item.name == 'Руслан');
+
+// console.log(admin);
+// console.log(adminIndex);
+
+
+// let users = [
+// 	{ id: 1, name: 'Вася' },
+// 	{ id: 2, name: 'Петя' },
+// 	{ id: 3, name: 'Руслан' },
+// 	{ id: 4, name: 'Кирил' },
+// ];
+
+// let subUsers = users.filter(item => item.id > 2);
+
+// console.log(subUsers);
+// console.log(subUsers[0]);
+
+// Сортировка map и sort
+
+// let lordOfRings = ['Bilbo', 'Gandalf', 'Nazgul'];
+
+// let length = lordOfRings.map(item => item.length);
+
+// console.log(lordOfRings, length);
+// alert(lordOfRings + length);
+
+
+// let arr = [1, 2, 15];
+
+// arr.sort();
+
+// console.log(arr);
+
+// function compareNumeric(a, b) {
+// 	if (a > b) return 1;
+// 	if (a == b) return 0;
+// 	if (a < b) return -1;
+// }
+
+// let arr = [1, 15, 2, 3, 26, 5];
+
+// arr.sort(compareNumeric);
+// console.log(arr);
+
+// function compareNumeric(a, b) {
+// 	return a - b;
+// }
+
+// let arr = [23, 1, -15, 2, 3, 26, 5, -4];
+
+// arr.sort(compareNumeric);
+// console.log(arr);
+
+
+// let arr = [23, 1, -15, 2, 3, 26, 5, -4];
+
+// arr.sort((a, b) => a - b);
+// console.log(arr);
+
+// arr.reverse();
+// console.log(arr);
+
+// let names = 'Вася, Руслан, Паша';
+
+// let arr = names.split(', ');
+// console.log(arr);
+
+// for (let name of arr) {
+// 	alert(name);
+// }
+
+
+// let str = 'test';
+
+// let arr = str.split('');
+
+// console.log(arr);
+
+
+// let arr = ['Вася', 'Руслан', 'Герман'];
+
+// let str = arr.join('; ');
+// alert(str);
+
+// Задание 1
+
+// function camelize(str) {
+// 	let arr = str.split('-');
+
+// 	arr.forEach((element, index) => {
+// 		if (!element) {
+// 			arr.splice(index, 1);
+
+// 		}
+// 	});
+// 	console.log();
+
+// 	arr.forEach((element, index, array) => {
+// 		if (index) {
+// 			element = element[0].toUpperCase() + element.slice(1); // element возвращает значение но не меняет его в массиве
+// 			array[index] = element; // а здесь мы присваивает новое значение нашему массиву
+// 		}
+// 	});
+// 	return console.log(arr.join(''));
+
+// }
+
+// camelize("background-color") == 'backgroundColor';
+// camelize("list-style-image") == 'listStyleImage';
+// camelize("-webkit-transition") == 'WebkitTransition';
+
+// Решение на сайте
+
+// function camelize(str) {
+// 	return alert(str
+// 		.split('-')
+// 		.map((item, index, array) => index == 0 ? item : item[0].toUpperCase() + item.slice(1))
+// 		.join(''))
+// }
+
+// camelize("background-color") == 'backgroundColor';
+// camelize("list-style-image") == 'listStyleImage';
+// camelize("-webkit-transition") == 'WebkitTransition';
+
+
+// Задание 2
+
+// let arr = [5, 3, 8, 1];
+
+// filterRangeInPlace(arr, 1, 4); // удалены числа вне диапазона 1..4
+
+// alert(arr); // [3, 1]
+
+// function filterRangeInPlace(array, min, max) {
+// 	array.map(
+// 		(item, index, array) => 
+// 		(min < item && item < max) ? 
+// 		item : 
+// 		array.splice(index, 1)
+// 	)
+// }
+
+// решение 2
+
+// let arr = [5, 3, 8, 1];
+
+// filterRangeInPlace(arr, 1, 4); // удалены числа вне диапазона 1..4
+
+// alert(arr); // [3, 1]
+
+// function filterRangeInPlace(array, min, max) {
+// 	array.map((item, index, array) => {
+// 		if (item > min && item < max) {
+// 			item;
+// 		} else {
+// 			array.splice(index, 1);
+// 		}
+// 	})
+// }
+
+// Решение Сайта 
+
+// function filterRangeInPlace(arr, a, b) {
+
+// 	for (let i = 0; i < arr.length; i++) {
+// 	  let val = arr[i];
+
+// 	  // удалить, если за пределами интервала
+// 	  if (val < a || val > b) {
+// 		 arr.splice(i, 1);
+// 		 i--;
+// 	  }
+// 	}
+
+//  }
+
+//  let arr = [5, 3, 8, 1];
+
+//  filterRangeInPlace(arr, 1, 4); // удалены числа вне диапазона 1..4
+
+//  alert( arr ); // [3, 1]
+
+// Задание 3
+
+// let arr = [5, 2, 1, -10, 8, 30, 20, 3,];
+
+// arr.sort((a, b) => a - b).reverse();
+// console.log(arr);
+
+// Решение 2
+
+
+// let arr = [5, 2, 1, -10, 8, 30, 20, 3,];
+
+// arr.sort((a, b) => b - a); // если a>b функция выдаст минус значение и следовательно возьмется сначала a потом b
+// console.log(arr);
+
+
+// Задание 4
+
+// function copySorted(arr) {
+// 	let array = arr.slice();
+// 	return array.sort();
+// }
+
+// let arr = ['HTML', 'JavaScript', 'CSS'];
+
+// let sorted = copySorted(arr);
+
+// alert(sorted);
+// alert(arr);
+
+// Решение 2
+
+// function copySorted(arr) {
+// 	return arr.slice().sort();
+// }
+
+// let arr = ["HTML", "JavaScript", "CSS"];
+
+// let sorted = copySorted(arr);
+
+// alert(sorted);
+// alert(arr);
+
+// Задание 5
+
+// let calc = new Calculator;
+
+// function Calculator() {
+
+// 	this.calculate = (str) => {
+// 		this.split = str.split(' ');
+
+// 		let a = +this.split[0];
+// 		let op = this.split[1];
+// 		let b = +this.split[2];
+// 		let result;
+
+// 		if (op == '+') {
+// 			result = a + b;
+// 		}
+// 		if (op == '-') {
+// 			result = a - b;
+// 		}
+// 		return alert(result);
+// 	}
+
+// }
+// calc.calculate("3 + 7");
+
+
+// Правильное решение
+
+// function Calculator() {
+
+
+// 	this.method = {
+// 		'+': (a, b) => a + b,
+// 		'-': (a, b) => a - b,
+// 	}
+
+// 	this.addMethod = (name, func) =>
+// 		this.method[name] = func,
+
+// 		this.calculate = (str) => {
+// 			let split = str.split(' ');
+// 			a = +split[0];
+// 			op = split[1];
+// 			b = +split[2];
+
+// 			if (!op || isNaN(a) || isNaN(b)) {
+// 				return NaN
+// 			}
+
+// 			return this.method[op](a, b);
+// 		}
+
+// }
+
+// // let calc = new Calculator;
+// // alert(calc.calculate("3 + 7"));
+
+// let powerCalc = new Calculator;
+// powerCalc.addMethod('*', (a, b) => a * b);
+// powerCalc.addMethod("/", (a, b) => a / b);
+// powerCalc.addMethod("**", (a, b) => a ** b);
+
+// alert(powerCalc.calculate('3 * 2'));
+// alert(powerCalc.calculate('3 / 2'));
+// alert(powerCalc.calculate('3 ** 2'));
+
+// Задание 6
+
+// let arr = [5, 3, 8, 1];
+
+// let filtered = filterRange(arr, 1, 4);
+
+// alert(filtered);
+// alert(arr);
+
+// function filterRange(array, min, max) {
+// 	let result = array.filter((item) => item >= min && item <= max);
+// 	return result;
+// }
+
+// Задание 7
+
+// let vasya = { name: "Вася", age: 25 };
+// let petya = { name: "Петя", age: 30 };
+// let masha = { name: "Маша", age: 28 };
+
+// let users = [vasya, petya, masha];
+
+// let names = fetchingNames(users);
+
+
+
+// function fetchingNames(array) {
+
+// 	let result = [];
+
+// 	array.forEach(element => {
+// 		result.push(element.name);
+// 	});
+
+// 	return result;
+
+// }
+// console.log(names);
+
+// решение сайта
+
+// let vasya = { name: "Вася", age: 25 };
+// let petya = { name: "Петя", age: 30 };
+// let masha = { name: "Маша", age: 28 };
+
+// let users = [ vasya, petya, masha ];
+
+// let names = users.map(item => item.name);
+
+// alert(names);
+
+// Проверка
+
+// let vasya = { name: "Вася", age: 25 };
+// let petya = { name: "Петя", age: 30 };
+// let masha = { name: "Маша", age: 28 };
+
+// let users = [vasya, petya, masha];
+
+// let names = users.filter(item => item.age < 30);
+
+// console.log(names);
+// console.log(users);
+
+// Задание 8
+
+// let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
+// let petya = { name: "Петя", surname: "Иванов", id: 2 };
+// let masha = { name: "Маша", surname: "Петрова", id: 3 };
+
+// let users = [vasya, petya, masha];
+
+// let usersMapped = users.map(item => {
+// 	return { fullName: item.name + ' ' + item.surname, id: item.id, }
+// });
+
+// console.log(usersMapped);
+// console.log(users);
+
+// Решение сайта
+
+// let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
+// let petya = { name: "Петя", surname: "Иванов", id: 2 };
+// let masha = { name: "Маша", surname: "Петрова", id: 3 };
+
+// let users = [vasya, petya, masha];
+
+// let usersMapped = users.map(item => ({     
+// 	fullName: `${item.name} ${item.surname}`,
+// 	id: item.id,
+// }));
+
+// /*Как мы помним, есть две функции со стрелками: 
+// без тела value => expr и с телом value => {...}.
+
+// Здесь JavaScript будет трактовать { как начало тела функции,
+// а не начало объекта. Чтобы обойти это,
+// нужно заключить их в «нормальные» скобки*/
+// console.log(usersMapped);
+// console.log(users);
+
+
+// Задание 9
+
+// let petya = { name: "Петя", age: 30 };
+// let vasya = { name: "Вася", age: 25 };
+
+// let masha = { name: "Маша", age: 28 };
+
+// let arr = [petya, vasya, masha];
+
+// sortByAge(arr);
+// function sortByAge(array) {
+// 	array.sort((a, b) => (a.age - b.age));
+// }
+
+// console.log(arr);
+// alert(arr[0].name); // Вася
+// alert(arr[1].name); // Маша
+// alert(arr[2].name); // Петя
+
+// Решение сайта
+
+// function sortByAge(arr) {
+// 	arr.sort((a, b) => a.age > b.age ? 1 : -1);
+// }
+
+// let vasya = { name: "Вася", age: 25 };
+// let petya = { name: "Петя", age: 30 };
+// let masha = { name: "Маша", age: 28 };
+
+// let arr = [vasya, petya, masha];
+
+// sortByAge(arr);
+
+// alert(arr[0].name); // Вася
+// alert(arr[1].name); // Маша
+// alert(arr[2].name); // Петя
+
+// Задание 10
+
+// let arr = [1, 2, 3];
+
+
+// function shuffle(array) {
+// 	array.sort(() => Math.random() - 0.5);
+// }
+// shuffle(arr);
+
+// alert(arr);
+
+// проверка этого метода
+
+// function shuffle(array) {
+// 	array.sort(() => Math.random() - 0.5);
+// }
+
+// let count = {
+// 	'123': 0,
+// 	'132': 0,
+// 	'213': 0,
+// 	'231': 0,
+// 	'321': 0,
+// 	'312': 0
+// };
+
+// for (let i = 0; i < 1000000; i++) {
+// 	let array = [1, 2, 3];
+// 	shuffle(array);
+// 	count[array.join('')]++;
+// }
+
+// for (let key in count) {
+// 	console.log(`${key}: ${count[key]}`);
+// }
+
+// Задание 11
+
+// let vasya = { name: "Вася", age: 25 };
+// let petya = { name: "Петя", age: 30 };
+// let masha = { name: "Маша", age: 29 };
+
+// let arr = [vasya, petya, masha];
+
+// let result1 = getAverageAge(arr);
+
+// alert(result1);
+
+// function getAverageAge(array) {
+// 	let sum = array.reduce((previousValue, item) => previousValue + item.age, 0);
+// 	let result = sum / array.length;
+// 	return result;
+// }
+
+// Решение сайта 
+
+// function getAverageAge(users) {
+// 	return users.reduce((prev, user) => prev + user.age, 0) / users.length;
+// }
+
+// let vasya = { name: "Вася", age: 25 };
+// let petya = { name: "Петя", age: 30 };
+// let masha = { name: "Маша", age: 29 };
+
+// let arr = [vasya, petya, masha];
+
+// alert(getAverageAge(arr)); // 28
+
+// Задание 12
+
+// function unique(arr) {
+// 	let result = [];
+// 	for (let str of arr) {
+// 		if (!result.includes(str)) {
+// 			result.push(str);
+// 		}
+// 	}
+// 	return result;
+// }
+
+// let strings = ["кришна", "кришна", "харе", "харе",
+// 	"харе", "харе", "кришна", "кришна", ":-O"
+// ];
+
+// let result = unique(strings);
+// console.log(result);
+
+// Перебираемые обьекты
+
+// let range = {
+// 	from: 1,
+// 	to: 5,
+// };
+
+// range[Symbol.iterator] = function () {
+// 	return {
+// 		current: this.from,
+// 		last: this.to,
+// 		next() {
+// 			if (this.current <= this.last) {
+// 				return { done: false, value: this.current++ };
+// 			} else {
+// 				return { done: true };
+// 			}
+// 		}
+// 	};
+// };
+
+// for (let num of range) {
+// 	alert(num); // 1, затем 2, 3, 4, 5
+// }
+
+// console.log(range);
+
+
+// let range = {
+// 	from: 1,
+// 	to: 5,
+
+// 	[Symbol.iterator]() {
+// 		this.current = this.from;
+// 		return this;
+// 	},
+
+// 	next() {
+// 		if (this.current <= this.to) {
+// 			return { done: false, value: this.current++ };
+// 		} else {
+// 			return { done: true };
+// 		}
+// 	},
+// };
+
+// for (let iterator of range) {
+// 	alert(iterator);
+// }
+
+// Строка - перебираемый обьект
+
+// let str = 'test';
+
+// let arr = [];
+// for (let char of str) {
+// 	arr.push(char);
+// }
+
+// console.log(arr);
+
+// Явный вызов операторов
+
+// let str = 'hello';
+
+// let iterator = str[Symbol.iterator]();
+
+// while (true) {
+// 	let result = iterator.next();
+// 	if (result.done) {
+// 		break
+// 	}
+// 	console.log(result.value);
+
+// }
+
+// Ошибка итерации у псевдомассива
+
+// let arrayLike = {
+// 	0: 'Hello',
+// 	1: 'World',
+// 	length: 2,
+// 	[Symbol.iterator]()
+// };
+
+// console.log(arrayLike);
+
+// for (let item of arrayLike) {
+// 	alert(item);
+// }
+
+
+// let arrayLike = {
+// 	0: 'Hello',
+// 	1: 'World',
+// 	length: 2
+// };
+
+// let arr = Array.from(arrayLike);
+// console.log(arr);
+// console.log(arr.pop());
+// console.log(arr);
+
+
+// let range = {
+// 	from: 0,
+// 	to: 5,
+// }
+
+// range[Symbol.iterator] = function () {
+// 	return {
+// 		current: this.from,
+// 		last: this.to,
+// 		next() {
+// 			if (this.current <= this.last) {
+// 				return { done: false, value: this.current++ };
+// 			} else {
+// 				return { done: true };
+// 			}
+// 		}
+// 	};
+// };
+
+// let arr = Array.from(range);
+// let array = Array.from(range, num => num * 2);
+
+
+// console.log(range);
+// console.log(arr);
+// console.log(array);
+
+
+// let str = 'Hello';
+
+// let arr = Array.from(str);
+
+// console.log(arr);
+
+
+
+// function slice(str, start, end) {
+// 	return Array.from(str).slice(start, end).join('');
+// }
+
+// let str = '𝒳😂𩷶';
+
+// alert(slice(str, 1, 3));
+// alert(str.slice(1, 3));
+
+
+//  Map и Set
+
+// let map = new Map();
+
+// map.set('1', 'str1');
+// map.set(1, 'num1');
+// map.set(true, 'bool1');
+
+// console.log(map);
+// console.log(map.get('1'));
+// console.log(map.get(1));
+// console.log(map.get(true));
+// console.log(map.size);
+
+
+
+// let john = { name: 'John' };
+
+// let visitsCountMap = new Map;
+
+// visitsCountMap.set(john, 123);
+
+// console.log(john);
+// console.log(visitsCountMap.get(john));
+
+
+// let john = {
+// 	name: 'John',
+// };
+
+// let visitsCountMap = {};
+
+// visitsCountMap[john] = 123;
+
+// alert(visitsCountMap["[object Object]"]);
+
+
+// let recipeMap = new Map([
+// 	['огурец', 500],
+// 	['помидор', 350],
+// 	['лук', 50],
+// ]);
+
+// for (let vegeable of recipeMap.keys()) {
+// 	console.log(vegeable);
+// }
+
+// for (let amount of recipeMap.values()) {
+// 	console.log(amount);
+// }
+
+// for (let iterator of recipeMap) {
+// 	console.log(iterator);
+// }
+
+// recipeMap.forEach((value, key, map) => {
+// 	console.log(`${key}:  ${value}`);
+// })
+
+
+// let map = new Map([
+// 	['1', 'str1'],
+// 	[1, 'num1'],
+// 	[true, 'bool1'],
+// ]);
+
+// console.log(map);
+
+
+// let obj = {
+// 	name: 'John',
+// 	age: 30,
+// };
+
+// let map = new Map(Object.entries(obj));
+// console.log(map);
+
+
+// let map = new Map([
+// 	['banana', 1],
+// 	['orange', 2],
+// 	['meat', 4],
+// ]);
+
+// let prices = Object.fromEntries(map);
+
+// console.log(map);
+// console.log(prices);
+
+
+// let map = new Map();
+// map.set('banaan', 1);
+// map.set('orange', 2);
+// map.set('meat', 4);
+
+// let obj = Object.fromEntries(map.entries());
+
+// console.log(obj);
+
+// let obj = Object.fromEntries(map);
+
+// console.log(obj);
+
+
+// Задание 3
+
+
+// let map = new Map();
+
+// map.set("name", "John");
+
+// let keys = Array.from(map.keys());
+
+// keys.push("more");
+// console.log(keys);
+// console.log(map);
+
+
+// Задание 1
+
+// let value = ['Hare', 'Krishna',
+// 	'Hare', 'Krishna', 'Krishna',
+// 	'Hare', 'Hare', ':-O'];
+
+// function unique(arr) {
+// 	let set = new Set(arr);
+// 	return Array.from(set);
+// }
+
+// console.log(unique(value));
+// console.log(value);
+
+// Задание 2
+
+
+// let arr = ["nap", "teachers", "cheaters",
+// 	"PAN", "ear", "era", "hectares"];
+
+// function aclean(arr) {
+// 	let set = new Set();
+// 	let result;
+// 	let finalArr = [];
+// 	arr.forEach(word => {
+// 		result = word.toUpperCase().split('').sort().join('');
+// 		// console.log(result);
+
+// 		if (!set.has(result)) {
+// 			finalArr.push(word)
+// 		}
+// 		set.add(result);
+// 		// console.log(set);
+// 		// console.log(finalArr);
+
+// 	});
+// 	return finalArr;
+// }
+// console.log(aclean(arr));
+
+// console.log(arr);
+
+
+// Решение сайта 1
+
+
+// let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+// function aclean(arr) {
+// 	let map = new Map();
+
+// 	for (let word of arr) {
+// 		let sorted = word.toLowerCase().split('').sort().join('');
+// 		map.set(sorted, word);
+// 	}
+// 	return (Array.from(map.entries()));
+// 	// return (Array.from(map.values()));
+// }
+
+// let arrayInArray = aclean(arr);
+
+// console.log(arrayInArray);                    // проверка Array.from(map.entries())
+// console.log(Array.isArray(arrayInArray));     // массив
+// console.log(Array.isArray(arrayInArray[1]));  // в массиве
+
+// let objectFromArray = Object.fromEntries(arrayInArray); // перобразование из массива в массиве в обьект
+// console.log(objectFromArray);
+
+
+// Решение сайта 2
+
+
+// function aclean(arr) {
+// 	let obj = {};
+
+// 	for (let index = 0; index < arr.length; index++) {
+// 		let element = arr[index].toLowerCase().split('').sort().join('');
+// 		obj[element] = arr[index];
+// 	}
+
+// 	return Object.values(obj);
+// }
+
+// let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+// let isArray = aclean(arr);
+
+// console.log(isArray);
+
+
+// WeakMap и WeakSet
+
+
+// let john = { name: 'John' };
+
+// let map = new Map();
+
+// map.set(john, 'hello');
+
+// console.log(map.entries());
+
+
+// Функция счётчик визитов.
+
+
+// let visitsCountMap = new WeakMap(); // map: пользователь => число счётчиков
+
+// function countUser(user) {
+// 	let count = visitsCountMap.get(user) || 0;
+// 	visitsCountMap.set(user, count + 1);
+// }
+
+
+// Задание 1
+
+
+// let messages = [
+// 	{ text: "Hello", from: "John" },
+// 	{ text: "How goes?", from: "John" },
+// 	{ text: "See you soon", from: "Alice" }
+// ];
+
+// let readMessages = new WeakSet();
+
+
+// readMessages.add(messages[0]);
+// readMessages.add(messages[1]);
+
+// readMessages.add(messages[0]);
+
+// console.log('Read message 0: ' + readMessages.has(messages[0]));
+// console.log('Read message 1: ' + readMessages.has(messages[1]));
+// console.log('Read message 2: ' + readMessages.has(messages[2]));
+
+// messages.shift();
+
+// console.log(messages);
+// console.log('Read message 1: ' + readMessages.has(messages[1]));
+
+
+// Задание 2
+
+// let messages = [
+// 	{ text: 'Hello', from: 'John' },
+// 	{ text: 'How goes?', from: 'John' },
+// 	{ text: 'See you soon', from: 'Alice' },
+// ];
+
+// let readMap = new WeakMap();
+
+// readMap.set(messages[0], new Date(2020, 1, 1));
+
+
+// console.log(readMap.get(messages[0]));
+// messages.shift();
+// console.log(readMap.get(messages[0]));
+
+
+// Object.keys, values, entries
+
+// let user = {
+// 	name: 'john',
+// 	age: 30,
+// };
+
+// console.log(Object.keys(user));
+// console.log(Object.values(user));
+
+// let arr = Object.entries(user);
+// let map = new Map(Object.entries(user)); // let map = new Map(arr);
+
+
+// console.log(arr);
+// console.log(Object.fromEntries(arr));
+// console.log(map);
+
+
+// let user = {
+// 	name: 'Ruslan',
+// 	age: 29,
+// };
+
+// for (const value of Object.values(user)) {
+// 	console.log(value);
+// };
+
+
+//Задание 1
+
+// let salaries = {
+// 	'John': 100,
+// 	'Pete': 300,
+// 	'Mary': 250,
+// };
+
+// alert(sumSalaries(salaries));
+
+
+// Пример функции через колбэк
+
+// function sumSalaries(obj) {
+// 	let arr = Object.values(obj);
+// 	console.log(arr);
+
+// 	return arr.reduce((sumValue, item) => sumValue + item, 0);
+// }
+
+// Пример функции через обычную функцию
+
+// function sumSalaries(obj) {
+// 	let arr = Object.values(obj);
+// 	console.log(arr);
+
+// 	return arr.reduce(function (sumValue, item) {
+// 		return sumValue + item
+// 	}, 0);
+// }
+
+
+// Пример сайта
+
+
+// function sumSalaries(salaries) {
+
+// 	let sum = 0;
+// 	for (let salary of Object.values(salaries)) {
+// 		sum += salary;
+// 	}
+
+// 	return sum;
+// }
+
+// let salaries = {
+// 	"John": 100,
+// 	"Pete": 300,
+// 	"Mary": 250
+// };
+
+// alert(sumSalaries(salaries))
+
+
+// Задание 2
+
+// let user = {
+// 	name: 'John',
+// 	age: 30,
+// };
+
+// alert(count(user));
+
+// function count(obj) {
+// 	return Object.entries(obj).length;
+// }
+
+
+// Диструктурирующее присваивание
+
+
+// let arr = ['Ruslan', 'Sidorov'];
+
+// let [firstName, surname] = arr;
+
+// console.log(arr);
+// console.log(firstName);
+// console.log(surname);
+
+
+// let [firstName, surName] = 'Ruslan Sidorov'.split(' ');
+
+// console.log(firstName);
+// console.log(surName);
+
+
+// let [firstname, , title] = ['ruslan', 'genry', 'admin'];
+
+// console.log(title);
+
+
+// let [a, b, c] = 'abc';
+// let [one, two, three] = new Set([1, 2, 3]);
+
+// console.log(b);
+// console.log(two);
+
+
+// let user = {};
+// [user.name, user.surname] = 'Ruslan Sidorov'.split(' ');
+
+// console.log(user);
+
+
+// let user = {
+// 	name: 'Ruslan',
+// 	age: 29,
+// };
+
+// for (const [key, value] of Object.entries(user)) {
+// 	console.log(`${key}: ${value}`);
+// }
+
+
+
+// let map = new Map([
+// 	['name', 'Ruslan'],
+// 	['age', 29],
+// ]);
+
+// for (const [key, value] of map) {
+// 	console.log(`${key}: ${value}`);
+// }
+
+
+// let [name1, name2, ...rest] = ['Jukius', 'Caesar', 'Consul', 'of the Roman Republic'];
+
+// console.log(name1);
+// console.log(name2);
+// console.log(rest);
+
+
+// let [firstName, surname] = [];
+
+// console.log(firstName);
+
+
+// Значение по умолчанию
+
+// let [name = 'Guest', surname = 'Anonymous'] = ['Julius'];
+
+// console.log(name);
+// console.log(surname); // значение по умолчанию
+
+
+// let [name = prompt('Введите имя: ', ''), surname = prompt('Введите фамилию: ', '')] =
+// 	['Ruslan'];
+
+// console.log(name);
+// console.log(surname);
+
+
+// Деструктуризация обьекта
+
+// let options = {
+// 	title: 'Menu',
+// 	width: 100,
+// 	height: 200
+// };
+
+// let { height, width, title } = options; // названия переменных в произвольном порядкеб но присваивается соответствующим ключам
+
+// console.log(title);
+// console.log(width);
+// console.log(height);
+
+
+// Присваивание переменной другого названия
+
+// let options = {
+// 	title: 'Menu',
+// 	width: 100,
+// 	height: 200
+// };
+
+// let { width: w, height: h, title } = options; // свойство width соответствует переменной w
+
+// console.log(title);
+// console.log(w);
+// console.log(h);
+
+
+// let options = {
+// 	title: 'Menu'
+// };
+
+// let { width: w = prompt('width?', ''), title, height: h = prompt('height?', '') } = options;
+
+// console.log(title);
+// console.log(w);
+// console.log(h);
+
+
+// let title, width, height;
+
+// ({ title, width, height } = { title: 'Menu', width: 200, height: 100 });
+
+// alert(title)
+
+
+// let options = {
+// 	size: {
+// 		width: 100,
+// 		height: 200,
+// 	},
+// 	items: ['Cake', 'Donut'],
+// 	extra: true
+// };
+
+// let {
+// 	size: {
+// 		width,
+// 		height
+// 	},
+// 	items: [item1, item2],
+// 	title = 'Menu'
+// } = options;
+
+// console.log(title);
+// console.log(width);
+// console.log(height);
+// console.log(item1);
+// console.log(item2);
+
+
+// function showMenu1({ title, width: w = 200, height: h = 100, items: [i1, i2] }) {
+// 	console.log(title);
+// 	console.log(w);
+// 	console.log(h);
+// 	console.log(i1);
+// 	console.log(i2);
+// }
+
+// function showMenu({ title, width = 200, height = 100, items = [] } = {}) {
+// 	console.log(title);
+// 	console.log(width);
+// 	console.log(height);
+// 	console.log(items);
+// }
+
+// let options = {
+// 	title: 'My menu',
+// 	items: ['Item1', 'Item2'],
+// };
+
+// showMenu(options);
+// showMenu1(options);
+// showMenu({});
+// showMenu();
+
+
+// Задание 1
+
+// let user = {
+// 	name: 'Ruslan',
+// 	years: 29,
+// };
+
+// let { name, years: age, isAdmin = false } = user;
+
+// alert(name);
+// alert(age);
+// alert(isAdmin);
+
+
+// Задание 2
+
+// let salaries = {
+// 	'John': 100,
+// 	'Pete': 300,
+// 	'Mary': 250,
+// };
+
+// topSalary(salaries);
+
+// function topSalary(obj) {
+
+// 	let result = [null, 0];
+// 	for (const [key, value] of Object.entries(obj)) {
+// 		if (result[1] < value) {
+// 			result = [key, value];
+// 		}
+// 	}
+// 	return alert(result[0]);
+// }
+
+
+// решение сайта
+
+
+// function topSalary(salaries) {
+
+// 	let max = 0;
+// 	let maxName = null;
+
+// 	for (const [name, salary] of Object.entries(salaries)) {
+// 		if (max < salary) {
+// 			max = salary;
+// 			maxName = name;
+// 		}
+// 	}
+
+// 	return maxName;
+// }
