@@ -3271,3 +3271,1366 @@
 
 // 	return maxName;
 // }
+
+
+// Дата и Время
+
+
+// let now = new Date();
+
+// alert(now);
+
+// let date0 = new Date(0);
+
+// alert(date0);
+
+
+// let Dec31_1969 = new Date(-24 * 3600 * 1000); //  Отрицательное значение времени
+
+// alert(Dec31_1969);
+
+
+// let date = new Date('2017-12-31'); // Date string
+
+// alert(date);
+
+
+// new Date(year, month, date, hours, minutes, seconds, ms)
+
+// let date = new Date(2020, 9, 8, 0, 0, 0, 0);
+// let date1 = new Date(2020, 9, 8);
+// let date3 = new Date(2020, 09, 8, 12, 7, 35, 567);
+
+// console.log(date);
+// console.log(date1);
+// console.log(date3);
+
+
+// let date = new Date();
+
+// console.log(date.getFullYear());
+// console.log(date.getMonth());
+// console.log(date.getDate());
+// console.log(date.getHours());
+// console.log(date.getMinutes());
+// console.log(date.getSeconds());
+// console.log(date.getMilliseconds());
+// console.log(date.getDay());
+
+// console.log(date.getUTCFullYear());
+// console.log(date.getUTCMonth());
+// console.log(date.getUTCDate());
+// console.log(date.getUTCHours());
+// console.log(date.getUTCMinutes());
+// console.log(date.getUTCSeconds());
+// console.log(date.getUTCMilliseconds());
+// console.log(date.getUTCDay());
+
+// let dateMs = new Date().getTime(); // миллисекунд с 1970 года
+
+// console.log(dateMs);
+
+// console.log(date.getTimezoneOffset()); //разница в милилсекундах между моим и логдонским чаосвым поясом
+
+
+// Установка компонентов даты
+
+// let today = new Date();
+
+// today.setHours(0);
+// console.log(today);
+
+// today.setHours(0, 0, 0, 0);
+// console.log(today);
+
+// today.setFullYear(2020, 0, 0);
+// console.log(today);
+
+
+// Автоисправление 
+
+// let date = new Date(2013, 0, 35);
+// console.log(date);
+
+
+// let date = new Date(2016, 1, 28);
+// date.setDate(date.getDate() + 2);
+
+// console.log(date);
+
+
+// let date = new Date(2016, 0, 2);
+
+// date.setDate(1);
+// console.log(date);
+
+// date.setDate(0);
+// console.log(date);
+
+// date.setMinutes(1);
+// console.log(date);
+
+
+// let date = new Date();
+// alert(+date);
+
+
+// let start = new Date();
+
+// for (let i = 0; i < 100000; i++) {
+// 	let doSomething = i * i * i;
+// }
+
+// let end = new Date();
+
+// console.log(`Цикл отработал за ${end - start} миллисекунд`);
+
+
+// Date.now
+
+// let start = Date.now();
+
+// for (let i = 0; i < 100000; i++) {
+// 	let doSomething = i * i * i;
+// }
+
+// let end = Date.now();
+
+// console.log(`Цикл отработал за  ${end - start} милисекунд`);
+
+
+// Бэнчмаркинг
+
+// function diffSubtract(date1, date2) {
+// 	return date2 - date1;
+// }
+
+// function diffGetTime(date1, date2) {
+// 	return date2.getTime() - date1.getTime();
+// }
+
+// function bench(f) {
+// 	let date1 = new Date(0);
+// 	let date2 = new Date();
+
+// 	let start = Date.now();
+// 	for (let i = 0; i < 100000; i++) {
+// 		f(date1, date2);
+// 	}
+// 	return Date.now() - start;
+// }
+
+// console.log(`Время diffSubtract: ${bench(diffSubtract)} мс`);
+// console.log(`Время diffSubtract: ${bench(diffGetTime)} мс`);
+
+
+// function diffSubtract(date1, date2) {
+// 	return date2 - date1;
+// }
+
+// function diffGetTime(date1, date2) {
+// 	return date2.getTime() - date1.getTime();
+// }
+
+// function bench(f) {
+// 	let date1 = new Date(0);
+// 	let date2 = new Date();
+
+// 	let start = Date.now();
+// 	for (let i = 0; i < 100000; i++) {
+// 		f(date1, date2);
+// 	}
+// 	return Date.now() - start;
+// }
+
+// bench(diffSubtract);
+// bench(diffGetTime);
+
+// let time1 = 0;
+// let time2 = 0;
+
+// for (let i = 0; i < 10; i++) {
+// 	time2 += bench(diffGetTime);
+// 	time1 += bench(diffSubtract);
+// }
+
+// console.log(`1 Вариант занял ${time1} мс`);
+// console.log(`2 Вариант занял ${time2} мс`);
+
+
+// Разбор строки с датой
+
+// let ms = Date.parse('2012-01-26T13:51:50.417+04:00')
+// console.log(ms);
+
+// let date = new Date(Date.parse('2012-01-26T13:51:50.417Z'));
+// console.log(date);
+// console.log(+date);
+
+
+// Задание 1
+
+// let date = new Date('2012-02-20T03:12:00.000+04:00');
+// console.log(date);
+
+// Решение сайта
+
+// let d = new Date(2012, 1, 20, 3, 12);
+// console.log(d);
+
+
+// Задание 2
+
+// let date = new Date(2012, 0, 3);
+// alert(getWeekDay(date));
+
+// function getWeekDay(date) {
+// 	let dayOfWeek = date.getDay();
+// 	if (dayOfWeek == 0) {
+// 		return 'ВС';
+// 	} else if (dayOfWeek == 1) {
+// 		return 'ПН';
+// 	} else if (dayOfWeek == 2) {
+// 		return 'ВТ';
+// 	} else if (dayOfWeek == 3) {
+// 		return 'СР';
+// 	} else if (dayOfWeek == 4) {
+// 		return 'ЧТ';
+// 	} else if (dayOfWeek == 5) {
+// 		return 'ПТ';
+// 	} else if (dayOfWeek == 6) {
+// 		return 'СБ';
+// 	}
+// }
+
+
+// Решение сайта
+
+// let date = new Date(2012, 0, 3);
+// alert(getWeekDay(date));
+
+// function getWeekDay(date) {
+// 	let day = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'];
+
+// 	return day[date.getDay()];
+// }
+
+
+// Задание 3
+
+// let date = new Date(2012, 0, 3);
+
+// alert(getLocalDay(date));
+
+// function getLocalDay(date) {
+// 	let day = [7, 1, 2, 3, 4, 5, 6];
+
+// 	return day[date.getDay()];
+// }
+
+
+// Решение сайта
+
+// let date = new Date(2012, 0, 3);
+
+// alert(getLocalDay(date));
+
+// function getLocalDay(date) {
+// 	let day = date.getDay();
+
+// 	if (day == 0) {
+// 		day = 7;
+// 	}
+
+// 	return day;
+// }
+
+
+// Задание 4
+
+// let date = new Date(2015, 0, 2);
+
+// alert(getDateAge(date, 1));
+// alert(getDateAge(date, 2));
+// alert(getDateAge(date, 365));
+
+// function getDateAge(date, days) {
+// 	let d = new Date(date);
+// 	d.setDate(d.getDate() - days);
+// 	return d;
+// }
+
+
+// Задание 5
+
+// function getLastDayOfMonth(year, month) {
+
+// 	let lastDate = new Date(0);
+
+// 	for (let i = 28; i < 33; i++) {
+
+// 		let date = new Date(year, month, i);
+
+// 		if (lastDate.getDate() < date.getDate()) {
+
+// 			lastDate = date;
+
+// 		} else {
+
+// 			return lastDate.getDate()
+// 		}
+// 	}
+// }
+
+// alert(getLastDayOfMonth(2012, 02));
+
+
+
+// Решение сайта
+
+// function getLastDayOfMonth(year, month) {
+
+// 	let date = new Date(year, month + 1, 0);
+
+// 	return date.getDate();
+// }
+
+// alert(getLastDayOfMonth(2013, 1));
+
+
+
+// Задание 6
+
+// function getSecondsToday() {
+// 	let dateNow = new Date();
+// 	let timeNow = new Date();
+// 	dateNow.setHours(0, 0, 0, 0);
+
+// 	return (timeNow - dateNow) / 1000;
+
+// }
+
+// console.log(getSecondsToday());
+
+
+// Решение сайта
+
+// function getSecondsToday() {
+// 	let now = new Date();
+
+// 	let today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+// 	let diff = now - today; // разница в миллисекундах
+// 	return Math.round(diff / 1000); // получаем секунды
+// }
+
+// alert(getSecondsToday());
+
+
+
+// Задание 7
+
+// function getSecondsToTomorrow() {
+
+// 	let timeNow = new Date();
+// 	let tomorrow = new Date(
+// 		timeNow.getFullYear(),
+// 		timeNow.getMonth(),
+// 		(timeNow.getDate() + 1)
+// 	);
+
+
+// 	return (tomorrow - timeNow) / 1000;
+
+// }
+
+// console.log(getSecondsToTomorrow());
+
+
+// Задание 8
+
+// function formatDate(date) {
+
+// 	let dateNow = new Date();
+// 	let calculatedTime = (dateNow - date) / 1000;
+
+// 	if (calculatedTime < 1) {
+// 		return "прямо сейчас";
+// 	} else if (calculatedTime < 60) {
+// 		return `${calculatedTime} сек. назад`;
+// 	} else if (calculatedTime < 3600) {
+// 		return `${calculatedTime / 60} мин. назад`;
+// 	} else if (calculatedTime > 3600) {
+// 		let d = [
+// 			'0' + dateNow.getDate(),
+// 			'0' + (dateNow.getMonth() + 1),
+// 			'0' + dateNow.getFullYear(),
+// 			'0' + dateNow.getHours(),
+// 			'0' + dateNow.getMinutes(),
+// 		].map(value => value.slice(-2));
+// 		let result = d.slice(0, 3).join('.') + ' ' + d.slice(3).join(':');
+// 		return result;
+// 	}
+
+// }
+
+// alert(formatDate(new Date(new Date - 1))); // "прямо сейчас"
+
+// alert(formatDate(new Date(new Date - 30 * 1000))); // "30 сек. назад"
+
+// alert(formatDate(new Date(new Date - 5 * 60 * 1000))); // "5 мин. назад"
+
+// // вчерашняя дата вроде 31.12.2016, 20:00
+// alert(formatDate(new Date(new Date - 86400 * 1000)));
+
+
+// Решение сайта
+
+// function fromDate(date) {
+// 	let dayOfMonth = date.getDate();
+// 	let month = date.getMonth() + 1;
+// 	let year = date.getFullYear();
+// 	let hours = date.getHours();
+// 	let minutes = date.getMinutes();
+// 	let diffMs = new Date() - date;
+// 	let diffSec = Math.round(diffMs / 1000);
+// 	let diffMin = diffSec / 60;
+// 	let diffHour = diffMin / 60;
+
+// 	year = year.toString().slice(-2);
+// 	month = month < 10 ? '0' + month : month;
+// 	dayOfMonth = dayOfMonth < 10 ? '0' + dayOfMonth : dayOfMonth;
+// 	hours = hours < 10 ? '0' + hours : hours;
+// 	minutes = minutes < 10 ? '0' + minutes : minutes;
+
+// 	if (diffSec < 1) {
+// 		return 'прямо сейчас';
+// 	} else if (diffMin < 1) {
+// 		return `${diffSec} сек. назад`;
+// 	} else if (diffHour < 1) {
+// 		return `${diffMin} мин. назад`;
+// 	} else {
+// 		return `${dayOfMonth}.${month}.${year} ${hours}:${minutes}`;
+// 	}
+// }
+
+// alert(fromDate(new Date(new Date - 1))); // "прямо сейчас"
+
+// alert(fromDate(new Date(new Date - 30 * 1000))); // "30 сек. назад"
+
+// alert(fromDate(new Date(new Date - 5 * 60 * 1000))); // "5 мин. назад"
+
+// // вчерашняя дата вроде 31.12.2016, 20:00
+// alert(fromDate(new Date(new Date - 86400 * 1000)));
+
+
+// Формат JSON
+
+// let user = {
+// 	name: 'Ruslan',
+// 	age: 29,
+
+// 	toString() {
+// 		return `{name: "${this.name}", age: ${this.age} }`
+// 	}
+// }
+
+// alert(user);
+// console.log(user.toString());
+
+
+// let student = {
+// 	name: 'John',
+// 	age: 30,
+// 	isAdmin: false,
+// 	courses: ['html', 'css', 'js'],
+// 	wife: null,
+// };
+
+// let json = JSON.stringify(student);
+
+// alert(typeof json);
+
+// alert(json);
+// console.log(json);
+
+
+// console.log(JSON.stringify(1));
+// console.log(JSON.stringify('test'));
+// console.log(JSON.stringify(true));
+// console.log(JSON.stringify([1, 2, 3]));
+
+
+// JSON не видит символы, функции и ключи со значением undefined
+
+// let user = {
+// 	sayHi() {
+// 		alert('hello');
+// 	},
+// 	[Symbol('id')]: 123,
+// 	something: undefined,
+// }
+
+// console.log(JSON.stringify(user)
+// );
+
+
+// let meetup = {
+// 	title: 'Conference',
+// 	room: {
+// 		number: 23,
+// 		participants: ['john', 'ann']
+// 	}
+// };
+
+// alert(JSON.stringify(meetup));
+
+
+// let room = {
+// 	number: 23
+// };
+
+// let meetup = {
+// 	title: 'Conference',
+// 	participants: ['john', 'ann']
+// };
+
+// meetup.place = room;
+// room.occupiedBy = meetup;
+
+// alert(JSON.stringify(meetup));
+
+
+// let room = {
+// 	number: 23
+// };
+
+// let meetup = {
+// 	title: 'Conference',
+// 	participants: [{ name: 'John' }, { name: 'Alice' }],
+// 	place: room
+// };
+
+// room.occupiedBy = meetup;
+
+// alert(JSON.stringify(meetup, ['title', 'participants']));
+// alert(JSON.stringify(meetup, ['title', 'participants', 'name', 'place', 'number']));
+
+
+
+// let room = {
+// 	number: 23
+// };
+
+// let meetup = {
+// 	title: 'Conference',
+// 	participants: [{ name: 'John' }, { name: 'Alice' }],
+// 	place: room
+// };
+
+// room.occupiedBy = meetup;
+
+// let json = JSON.stringify(meetup, (key, value) =>
+// 	(key == 'occupiedBy') ? undefined : value);
+
+// let json1 = JSON.stringify(meetup, function replacer(key, value) {
+// 	// alert(`${key}: ${value}`)
+// 	return (key == 'occupiedBy') ? undefined : value;
+// })
+
+// alert(json);
+// alert(json1)
+
+
+// let user = {
+// 	name: 'Ruslan',
+// 	age: 29,
+// 	roles: {
+// 		isAdmin: true,
+// 		isEditor: true
+// 	}
+// };
+
+// console.log(JSON.stringify(user, null, 2));
+// console.log(JSON.stringify(user, null, 4));
+// console.log(JSON.stringify(user));
+
+
+// метод JSON
+
+// let room = {
+// 	number: 23
+// };
+
+// let meetup = {
+// 	title: 'Conference',
+// 	date: new Date(Date.UTC(2017, 0, 1)),
+// 	room
+// };
+
+// console.log(JSON.stringify(meetup, null, 1));
+// console.log(meetup);
+
+
+
+// let room = {
+// 	number: 23,
+// 	toJSON() {
+// 		return this.number // реализуем метод JSON для нашего обьекта
+// 	}
+// };
+
+// let meetup = {
+// 	title: 'Conference',
+// 	date: new Date(Date.UTC(2017, 0, 1)), // Для Date JSON реализуется автоматически
+// 	room
+// };
+
+// console.log(JSON.stringify(meetup, null, 1));
+// console.log(room);
+// console.log(JSON.stringify(room));
+
+
+// let number = '[1, 2, 3, 4]';
+
+// number = JSON.parse(number);
+
+// console.log(number);
+
+
+// let user = '{"name": "Ruslan", "age": 29, "isAdmin": true, "friends": [1, 2, 3, 4]}';
+
+// user = JSON.parse(user);
+
+// console.log(user);
+
+
+// let json = `{
+// 	name: "John",                     // Ошибка: имя свойства без кавычек
+// 	"surname": 'Smith',               // Ошибка: одинарные кавычки в значении (должны быть двойными)
+// 	'isAdmin': false                  // Ошибка: одинарные кавычки в ключе (должны быть двойными)
+// 	"birthday": new Date(2000, 2, 3), // Ошибка: не допускается конструктор "new", только значения.
+// 	"friends": [0,1,2,3]                     // Здесь всё в порядке
+//  }`;
+
+
+// let str = '{"title":"Conference","date":"2017-11-30T12:00:00.000Z"}';
+
+// let meetup = JSON.parse(str);
+
+// console.log(meetup.date.getDate());
+
+
+
+// let str = '{"title":"Conference","date":"2017-11-30T12:00:00.000Z"}';
+
+// let meetup = JSON.parse(str, (key, value) =>
+// 	(key == 'date') ? new Date(value) : value
+// );
+
+// console.log(meetup);
+// console.log(meetup.date.getDate());
+
+
+// let schedule = `{
+// "meetups": [
+// {"title":"Conference","date":"2017-11-30T12:00:00.000Z"},
+// {"title":"Birthday","date":"2017-04-18T12:00:00.000Z"}
+// ]
+// }`;
+
+// schedule = JSON.parse(schedule, (key, value) =>
+// 	(key == 'date') ? new Date(value) : value
+// );
+
+// console.log(schedule);
+
+
+// let schedule = `{
+// 	"meetups": [
+// 	  {"title":"Conference","date":"2017-11-30T12:00:00.000Z"},
+// 	  {"title":"Birthday","date":"2017-04-18T12:00:00.000Z"}
+// 	]
+//  }`;
+
+// schedule = JSON.parse(schedule, function (key, value) {
+// 	if (key == 'date') return new Date(value);
+// 	return value;
+// });
+
+// alert(schedule.meetups[1].date.getDate()); // 18 - отлично!
+
+
+// Задание 1
+
+// let user = {
+// 	name: 'Василий Иванович',
+// 	age: 35
+// };
+
+// user = JSON.stringify(user);
+
+// console.log(user);
+
+// let objUser = JSON.parse(user);
+
+// console.log(objUser);
+
+
+// Решение сайта
+
+// let user = {
+// 	name: "Василий Иванович",
+// 	age: 35
+// };
+
+// let user2 = JSON.parse(JSON.stringify(user));
+
+
+// Задание 2
+
+// let room = {
+// 	number: 23
+// };
+
+// let meetup = {
+// 	title: 'Совещание',
+// 	occupiedBy: [{ name: 'Иванов' }, { name: 'Петров' }],
+// 	place: room
+// }
+
+// room.occupiedBy = meetup;
+// meetup.self = meetup;
+
+// console.log(JSON.stringify(meetup, function (key, value) {
+
+// 	if (key == "") {
+// 		return value;
+// 	}
+
+// 	if (value == meetup) {
+// 		return undefined;
+// 	}
+// 	return value;
+// }));
+
+
+// Upgrade of first solutions
+
+// let room = {
+// 	number: 23
+// };
+
+// let meetup = {
+// 	title: 'Совещание',
+// 	occupiedBy: [{ name: 'Иванов' }, { name: 'Петров' }],
+// 	place: room
+// }
+
+// room.occupiedBy = meetup;
+// meetup.self = meetup;
+
+// console.log(JSON.stringify(meetup, (key, value) =>
+// 	(key != '' && value == meetup) ?
+// 		undefined :
+// 		value
+// ));
+
+
+// Решение сайта
+
+// let room = {
+// 	number: 23
+// };
+
+// let meetup = {
+// 	title: "Совещание",
+// 	occupiedBy: [{ name: "Иванов" }, { name: "Петров" }],
+// 	place: room
+// };
+
+// room.occupiedBy = meetup;
+// meetup.self = meetup;
+
+// alert(JSON.stringify(meetup, function replacer(key, value) {
+// 	return (key != "" && value == meetup) ? undefined : value;
+// }));
+
+
+// Рекурсия и стек
+
+// function pow(x, n) {
+// 	let result = 1;
+
+// 	for (let i = 0; i < n; i++) {
+// 		result *= x;
+// 	}
+
+// 	return result;
+// }
+
+// alert(pow(2, 3))
+
+
+
+// function pow(x, n) {
+
+// 	if (n == 1) {
+// 		return x;
+// 	} else {
+// 		return x * pow(x, n - 1);
+// 	}
+// }
+
+// alert(pow(2, 3))
+
+
+
+// function pow(x, n) {
+// 	return (n == 1) ? x : x * pow(x, n - 1);
+// }
+
+// alert(pow(2, 4))
+
+
+// let company = {
+// 	sales: [
+// 		{ name: 'John', salary: 1000 },
+// 		{ name: 'Alice', salary: 600 }
+// 	],
+// 	development: {
+// 		sites: [
+// 			{ name: 'Peter', salary: 2000 },
+// 			{ name: 'Alex', salary: 1800 }
+// 		],
+// 		internals: [{ name: 'Jack', salary: 1300 }]
+// 	}
+// };
+
+// console.log(sumSalaries(company));
+
+// function sumSalaries(department) {
+
+// 	if (Array.isArray(department)) {
+
+// 		return department.reduce((accumulator, value) => accumulator + value.salary, 0);
+
+// 	} else {
+// 		let sum = 0;
+
+// 		for (let subdep of Object.values(department)) {
+// 			sum += sumSalaries(subdep);
+// 		}
+// 		return sum
+// 	}
+// }
+
+
+// Связанный список
+
+// let list = {
+// 	value: 1,
+// 	next: {
+// 		value: 2,
+// 		next: {
+// 			value: 3,
+// 			next: {
+// 				value: 4,
+// 				next: null
+// 			}
+// 		}
+// 	}
+// };
+
+// console.log(list);
+
+
+// let secondlist = list.next.next;
+
+// list.next.next = null;
+// console.log(list);
+// console.log(secondlist);
+
+// list.next.next = secondlist;
+// console.log(list);
+
+
+// let list = { value: 1 };
+// list.next = { value: 2 };
+// list.next.next = { value: 3 };
+// list.next.next.next = { value: 4 };
+
+// list = {
+// 	value: 'new item',
+// 	next: list
+// };
+
+// console.log(list);
+
+// list.next = list.next.next;  // удаление из середины списка
+
+// console.log(list);
+
+
+// Задание 1
+
+// function sumTo(n) {
+
+// 	let sum = 0;
+
+// 	for (let i = 1; i <= n; i++) {
+// 		sum += i
+// 	}
+
+// 	return sum;
+// }
+
+// alert(sumTo(100));
+
+
+// function sumTo(n) {
+// 	if (n == 1) {
+// 		return n;
+// 	} else {
+// 		return n + sumTo(n - 1);
+// 	}
+// }
+
+// alert(sumTo(100));
+
+
+// function sumTo(n) {
+// 	return n * (n + 1) / 2; // формула арифметической прогресии
+// }
+
+// alert(sumTo(100542000))
+
+
+// Задание 2
+
+// function factorial(n) {
+// 	if (n == 1) {
+// 		return 1
+// 	} else {
+// 		return n * factorial(n - 1)
+// 	}
+// }
+
+// function factorial(n) {
+// 	return (n != 1) ? n * factorial(n - 1) : 1;
+// }
+
+// function factorial(n) {
+// 	return n ? n * factorial(n - 1) : 1;
+// }
+
+// alert(factorial(5));
+
+
+// Задание 3
+
+// function fib(n) {
+// 	let firstNum = 1;
+// 	let lastNum = 1;
+// 	let result = 1;
+// 	for (let i = 2; i < n; i++) {
+// 		firstNum = lastNum;
+// 		lastNum = result;
+// 		result = firstNum + lastNum;
+// 	}
+// 	return result;
+
+// }
+
+// alert(fib(10))
+
+
+// function fib(n) {
+// 	return (n <= 1) ? n : fib(n - 1) + fib(n - 2);
+// }
+
+
+// Задание 4
+
+// let list = {
+// 	value: 1,
+// 	next: {
+// 		value: 2,
+// 		next: {
+// 			value: 3,
+// 			next: {
+// 				value: 4,
+// 				next: null
+// 			}
+// 		}
+// 	}
+// };
+
+// printList(list);
+
+// function printList(list) {
+// 	if (list.next) {
+// 		return alert(list.value), printList(list.next)
+// 	} else {
+// 		return alert(list.value);
+// 	}
+// }
+
+// function printList(list) {
+// 	return JSON.parse((JSON.stringify(list)), (key, value) => { if (key == "value") alert(value) }
+// 	);
+// }
+
+// function printList(list) {
+// 	let test = list;
+
+// 	while (test) {
+// 		alert(test.value);
+// 		test = test.next;
+// 	}
+// }
+
+
+// Решение Сайта
+
+// function printList(list) {
+// 	alert(list.value);
+
+// 	if (list.next) {
+// 		return printList(list.next);
+// 	}
+// }
+
+
+// Задание 5
+
+// let list = {
+// 	value: 1,
+// 	next: {
+// 		value: 2,
+// 		next: {
+// 			value: 3,
+// 			next: {
+// 				value: 4,
+// 				next: null
+// 			}
+// 		}
+// 	}
+// };
+
+// printReverseList(list)
+
+// function printReverseList(list) {
+
+// 	if (!list.next) {
+// 		return alert(list.value);
+// 	} else {
+// 		printReverseList(list.next);
+// 		alert(list.value)
+// 	}
+// }
+
+// function printReverseList(list) {
+// 	let test = list;
+// 	let arr = [];
+// 	let index = 0;
+
+// 	while (test) {
+// 		arr.push(test.value);
+// 		test = test.next;
+// 		index++;
+// 	}
+
+// 	for (let i = 0; i < index; i++) {
+// 		alert(arr.pop());
+// 	}
+// }
+
+
+// Решение сайта
+
+// function printReverseList(list) {
+
+// 	if (list.next) {
+// 		printReverseList(list.next);
+// 	}
+// 	alert(list.value);
+// }
+
+
+// function printReverseList(list) {
+// 	let arr = [];
+// 	let tmp = list;
+
+// 	while (tmp) {
+// 		arr.push(tmp.value);
+// 		tmp = tmp.next;
+// 	}
+
+// 	for (let i = arr.length; i; i--) {
+// 		alert(arr[i - 1]);
+
+// 	}
+// }
+
+
+// Остаточные параметры
+
+// function sumAll(...args) {
+// 	let sum = 0;
+
+// 	for (const arg of args) {
+// 		sum += arg;
+// 	}
+
+// 	return sum;
+// }
+
+// alert(sumAll(1));
+// alert(sumAll(1, 2, 3));
+// alert(sumAll(4, 6, 2));
+
+
+// function showName(firstName, lastName, ...title) {
+// 	alert(`${firstName}  ${lastName}`);
+// 	alert(title[0]);
+// 	alert(title[1]);
+// 	alert(title.length);
+// }
+
+// showName('Юлий', 'Цезарь', 'Консул', 'Император');
+
+
+// function showName() {
+// 	alert(arguments.length);
+// 	alert(arguments[0]);
+// 	alert(arguments[1]);
+// }
+
+// showName('Юлий', 'Цезарь');
+
+// showName('Ruslan')
+
+
+// function f() {
+// 	let showArg = () => alert(arguments[0]); // у стрелочныых функций нет своего аргумента как и this
+// 	showArg(2);
+// }
+
+// f(1);
+
+
+// let arr = [3, 5, 1];
+
+// alert(Math.max(...arr));
+
+
+// let arr1 = [1, -2, 3, 4];
+// let arr2 = [8, 3, -8, 1];
+
+// alert(Math.max(...arr1, ...arr2));
+// alert(Math.max(...arr1, ...arr2, 25, -5));
+
+// let merget = [0, ...arr1, ...arr2];
+
+// alert(merget);
+
+
+// let str = 'Привет';
+
+// console.log([...str]);
+
+
+// Замыкание
+
+
+// function makeWorker() {
+// 	let name = 'Pete';
+
+// 	return function () {
+// 		alert(name);
+// 	};
+// }
+
+// let name = 'John';
+
+// let work = makeWorker();
+
+// work();
+
+
+// вложенная функция
+
+// function sayHiBye(firstName, lastName) {
+// 	function getFullName() {
+// 		return firstName + ' ' + lastName;
+// 	}
+
+
+// 	alert('Hello, ' + getFullName());
+// 	alert('Bye, ' + getFullName());
+// }
+
+// sayHiBye('Ruslan', 'Sidorov');
+
+
+// function User(name) {
+
+// 	this.sayHi = function () {
+// 		alert(name);
+// 	}
+// }
+
+// let user = new User('Ruslan');
+
+// user.sayHi();
+
+
+// function makeCounter() {
+// 	let count = 0;
+
+// 	return function () {
+// 		return count++;
+// 	};
+// }
+
+// let counter1 = makeCounter();
+// let counter2 = makeCounter();
+
+// alert(counter1());
+// console.log(counter1());
+// console.log(counter1());
+// console.log(counter2());
+
+
+// {
+// 	let message = 'Hello';
+
+// 	alert(message); // локальный запрос
+// }
+
+
+// alert(message); // глобальный запрос
+
+/*
+function () {
+	let message = 'Hello';
+
+	alert(message);
+} ();
+*/
+
+
+// (function () {
+// 	alert('Скобки вокруг функции!')
+// })();
+
+// (function () {
+// 	alert('Скобки вокруг всего!')
+// }());
+
+// !function () {
+// 	alert('Выражение начинается с логического оператора NOT!')
+// }();
+
+// +function () {
+// 	alert('Выражение начинается с унарного плюса!')
+// }();
+
+
+// function f() {
+// 	let value = Math.random();
+
+// 	return function () {
+// 		alert(value);
+// 	};
+// }
+
+// let arr = [f(), f(), f(), f()];
+
+
+// let value = 'Сюрприз';
+
+// function f() {
+// 	let value = Math.random();
+
+// 	function g() {
+// 		debugger;
+// 	}
+
+// 	return g;
+// }
+
+// let g = f();
+
+// g();
+
+
+// Задание 1
+
+// function makeCounter() {
+// 	let count = 0;
+
+// 	return function () {
+// 		return count++;
+// 	};
+// }
+
+// let counter1 = makeCounter();
+// let counter2 = makeCounter();
+
+
+// alert(counter1());
+// alert(counter1());
+
+// alert(counter2());
+// alert(counter2());
+
+
+// Задание 2
+
+// function Counter() {
+// 	let count = 0;
+
+// 	this.up = function () {
+// 		return ++count;
+// 	};
+
+// 	this.down = function () {
+// 		return --count;
+// 	};
+// }
+
+// let counter = new Counter();
+
+// alert(counter.up());
+// alert(counter.up());
+// alert(counter.down());
+
+
+// Задание 3
+
+// let phrase = 'Hello';
+
+// if (true) {
+// 	let name = 'Ruslan';
+
+// 	function sayHi() {
+// 		console.log(phrase + ' ' + name);
+// 	}
+// }
+
+// sayHi();
+
+
+let phrase = "Hello";
+
+if (true) {
+	let user = "John";
+
+	function sayHi() {
+		alert(`${phrase}, ${user}`);
+	}
+}
+
+sayHi();
