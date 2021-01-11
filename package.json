@@ -1,0 +1,35 @@
+{
+	"name": "learn-node",
+	"version": "1.0.0",
+	"description": "node test server",
+	"main": "server.js",
+	"scripts": {
+		"dev": "nodemon server.js",
+		"start": "node server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/GreedNeSS/learn-js.git"
+	},
+	"keywords": [
+		"node",
+		"test",
+		"server"
+	],
+	"author": "Sidorov Ruslan <rus.sid@mail.ru>",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/GreedNeSS/learn-js/issues"
+	},
+	"homepage": "https://github.com/GreedNeSS/learn-js#readme",
+	"dependencies": {
+		"debug": "^4.3.1",
+		"fs": "0.0.1-security",
+		"node-static": "^0.7.11",
+		"nodemon": "^2.0.6",
+		"path": "^0.12.7",
+		"querystring": "^0.2.0",
+		"url": "^0.11.0",
+		"ws": "^7.4.2"
+	}
+}
